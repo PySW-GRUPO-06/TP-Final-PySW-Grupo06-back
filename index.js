@@ -15,7 +15,14 @@ app.use(urlencoded({
 app.use(cors({origin: 'http://localhost:4200'}));
 
 
-
+app.use('/api/alumno', require('./routes/alumno.route'));
+app.use('/api/asistencia', require('./routes/asistencia.route'));
+app.use('/api/cuota', require('./routes/cuota.route'));
+app.use('/api/ejercicio', require('./routes/ejercicio.route'));
+app.use('/api/entrenador', require('./routes/entrenador.route'));
+app.use('/api/plan', require('./routes/plan.rote'));
+app.use('/api/rutina', require('./routes/rutina.route'));
+app.use('/api/usuario', require('./routes/usuario.route'));
 
 //setting
 app.set('port', process.env.PORT || 3000);
