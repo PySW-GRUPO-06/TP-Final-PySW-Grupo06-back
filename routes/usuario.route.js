@@ -11,5 +11,6 @@ router.post('/', usuarioCtrl.createUsuario);
 router.get('/:id', usuarioCtrl.getUsuario);
 router.put('/:id', usuarioCtrl.editUsuario);
 router.delete('/:id', usuarioCtrl.deleteUsuario);
+router.post('/login', usuarioCtrl.loginUsuario);
 //exportamos el modulo de rutas
 module.exports = router;

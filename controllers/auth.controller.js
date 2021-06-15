@@ -9,8 +9,8 @@ authCtrl.verifyToken = async (req, res, next) => {
             'msg': 'Unauthorized request.'
         })
     }
-    vararrayTexto = req.headers.authorization.split('');
-    vartoken = null;
+    var arrayTexto = req.headers.authorization.split('');
+    var token = null;
     (arrayTexto.length >= 2) ? token = arrayTexto[1] : token = null;
     if (token == null) {
         res.json({ 'status': '0', 'msg': 'Unauthorized request.' });
