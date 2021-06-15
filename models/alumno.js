@@ -16,6 +16,6 @@ const AlumnoSchema = new Schema({
  altura: {type: Number, required: true},
  plan: { type: Schema.ObjectId, ref: 'Plan' },
  usuario: { type: Schema.ObjectId, ref: 'Usuario' },
- asistencia: { type: [Schema.ObjectId], ref: 'Asistencia' }
+ asistencia: [{ type: Schema.ObjectId, ref: 'Asistencia' }]
 });
 module.exports = mongoose.models.alumno || mongoose.model('Alumno', AlumnoSchema);
