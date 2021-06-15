@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken');
+
 const Usuario = require('../models/usuario');
 
 const usuarioCtrl = {}
@@ -5,6 +7,37 @@ const usuarioCtrl = {}
 usuarioCtrl.getAllUsuario = async (req, res) => {
     var usuario = await Usuario.find();
     res.json(usuario);
+}
+
+usuarioCtrl.loginUsuario = async (req, res) => {
+    const criteria = {
+        username: req.body.username,
+        password: req.body.password
+    }
+    Usuario.findOne(criteria, function (err, user) {
+        if (err) {
+            res.json({
+                status: 0,
+                message: 'error'
+            })
+        };
+        if (!user) {
+            res.json({
+                status: 0,
+                message: "notfound"
+            })
+        } else {
+            constunToken = jwt.sign({ id: user._id }, "secretkey");
+            res.json({
+                status: 1,
+                message: "success",
+                username: user.username,
+                userid: user._id, 
+                perfinl: user.perfil,
+                token: unToken
+            });
+        }
+    })
 }
 
 usuarioCtrl.createUsuario = async (req, res) => {
