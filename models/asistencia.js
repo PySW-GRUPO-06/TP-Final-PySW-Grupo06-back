@@ -4,6 +4,7 @@ const {Schema} = mongoose;
 
 
 const AsistenciaSchema = new Schema({
- diaAsistido: {type: Date, required: true}
+ dia: {type: Date, required: true},
+ tipoAsistencia: {type: String, required: true}
 });
 module.exports = mongoose.models.asistencia || mongoose.model('Asistencia', AsistenciaSchema);
