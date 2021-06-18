@@ -7,6 +7,6 @@ const RutinaSchema = new Schema({
  nombre: {type: String, required: true},
  exigencia: {type: String, required: true},
  semanas: {type: Number, required: true},
- ejercicios: [{ type: Schema.ObjectId , ref: 'Ejercicio' }]
+ dias: [{ type: Schema.ObjectId , ref: 'Dia' }]
 });
 module.exports = mongoose.models.rutina || mongoose.model('Rutina', RutinaSchema);

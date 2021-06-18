@@ -23,7 +23,7 @@ app.use('/api/entrenador', require('./routes/entrenador.route'));
 app.use('/api/plan', require('./routes/plan.rote'));
 app.use('/api/rutina', require('./routes/rutina.route'));
 app.use('/api/usuario', require('./routes/usuario.route'));
-
+app.use('/api/dia', require('./routes/dia.route'));
 //setting
 app.set('port', process.env.PORT || 3000);
 //starting the server
