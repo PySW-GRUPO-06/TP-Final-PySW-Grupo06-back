@@ -10,6 +10,7 @@ const PlanSchema = new Schema({
  nivel: {type: String, required: true},
  objetivo: {type: String, required: true},
  registroDieta: [{ type: Schema.ObjectId , ref: 'RegistroDieta'}],
+ dieta: {type: Schema.ObjectId , ref: 'Dieta'},
  pago: [{ type: Schema.ObjectId , ref: 'Cuota' }],
  rutina: [{ type: Schema.ObjectId , ref: 'Rutina' }]
 });
