@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const planModel = require('./dieta');
+const dietaModel = require('./dieta');
 const {Schema} = mongoose;
 
 const DietaShema =new Schema({
