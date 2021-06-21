@@ -25,7 +25,7 @@ app.use('/api/rutina', require('./routes/rutina.route'));
 app.use('/api/usuario', require('./routes/usuario.route'));
 app.use('/api/dia', require('./routes/dia.route'));
 app.use('/api/dieta',require('./routes/dieta.route'))
-app.use('/api/dietaEstablecida', require('./routes/dia.route'));
+app.use('/api/dietaEstablecida', require('./routes/dietaEstablecida.route'));
 
 //setting
 app.set('port', process.env.PORT || 3000);
