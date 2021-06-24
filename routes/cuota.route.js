@@ -8,6 +8,7 @@ const router = express.Router();
 
 //definimos las rutas para la gestion de agente
 router.get('/',autCtrl.verifyToken, cuotaCtrl.getAllCuota);
+router.get('/modoPago/:modoPago',autCtrl.verifyToken, cuotaCtrl.getCuotaModoPago);
 router.post('/',autCtrl.verifyToken, cuotaCtrl.createCuota);
 router.get('/:id',autCtrl.verifyToken, cuotaCtrl.getCuota);
 router.put('/:id', autCtrl.verifyToken,cuotaCtrl.editCuota);

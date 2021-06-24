@@ -14,7 +14,6 @@ app.use(urlencoded({
 
 app.use(cors({origin: 'http://localhost:4200'}));
 
-
 app.use('/api/alumno', require('./routes/alumno.route'));
 app.use('/api/persona', require('./routes/persona.route'));
 app.use('/api/asistencia', require('./routes/asistencia.route'));
@@ -28,6 +27,7 @@ app.use('/api/dia', require('./routes/dia.route'));
 app.use('/api/dieta',require('./routes/dieta.route'));
 app.use('/api/registroDieta',require('./routes/registroDieta.route'));
 app.use('/api/dietaEstablecida', require('./routes/dietaEstablecida.route'));
+app.use('/api/noticia', require('./routes/noticia.route'));
 
 //setting
 app.set('port', process.env.PORT || 3000);

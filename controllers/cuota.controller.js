@@ -29,6 +29,11 @@ cuotaCtrl.getCuota = async (req, res) => {
     res.json(cuota);
 }
 
+cuotaCtrl.getCuotaModoPago = async (req, res) => {
+    const cuota = await Cuota.find(req.params).exec();
+    /* console.log(cuota)*/
+    res.json(cuota);
+}
 
 cuotaCtrl.editCuota = async (req, res) => {
     const vcuota = new Cuota(req.body);

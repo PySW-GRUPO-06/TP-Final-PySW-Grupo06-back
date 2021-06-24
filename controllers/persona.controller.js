@@ -29,6 +29,11 @@ personaCtrl.getPersona = async (req, res) => {
     res.json(persona);
 }
 
+personaCtrl.getPersonaDNI = async (req, res) => {
+    const persona = await Persona.find(req.params).exec();
+    /* console.log(persona)*/
+    res.json(persona);
+}
 
 personaCtrl.editPersona = async (req, res) => {
     const vpersona = new Persona(req.body);
