@@ -11,9 +11,11 @@ cuotaCtrl.createCuota = async (req, res) => {
     var cuota = new Cuota(req.body);
     try {
         await cuota.save();
+        /* console.log(cuota._id) */
         res.json({
             'status': '1',
-            'msg': 'cuota guardado.'
+            'msg': 'cuota guardado.',
+            'id': cuota._id
         })
     } catch (error) {
         res.json({

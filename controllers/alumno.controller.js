@@ -24,13 +24,13 @@ alumnoCtrl.createAlumno = async (req, res) => {
 }
 
 alumnoCtrl.getAlumno = async (req, res) => {
-    const alumno = await Alumno.findById(req.params.id).populate('plan').populate('usuario').populate('asistencia').exec();
+    const alumno = await Alumno.findById(req.params.id).populate('plan').populate('usuario').populate('asistencia').populate('persona').exec();
     /* console.log(alumno)*/
     res.json(alumno);
 }
 
 alumnoCtrl.getAlumnoPorPersona = async (req, res) => {
-    const alumno = await Alumno.find(req.params).populate('plan').populate('usuario').populate('asistencia').exec();
+    const alumno = await Alumno.find(req.params).populate('plan').populate('usuario').populate('asistencia').populate('persona').exec();
     /* console.log(alumno)*/
     res.json(alumno);
 }

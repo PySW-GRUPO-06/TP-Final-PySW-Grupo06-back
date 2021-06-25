@@ -8,7 +8,7 @@ const PersonaSchema = new Schema({
  apellido: {type: String, required: true},
  nombre: {type: String, required: true},
  dni: {type: Number, required: true},
- fechaNac: {type: Date, required: true},
+ fechaNac: {type: String, required: true},
  celular: {type: Number, required: true},
  domicilio: {type: String, required: true},
  correo: {type: String, required: true},

@@ -3,7 +3,7 @@ const Persona = require('../models/persona');
 const personaCtrl = {}
 
 personaCtrl.getAllPersona = async (req, res) => {
-    var persona = await Persona.find();
+    var persona = await Persona.find().populate('usuario').exec();
     res.json(persona);
 }
 
@@ -24,13 +24,13 @@ personaCtrl.createPersona = async (req, res) => {
 }
 
 personaCtrl.getPersona = async (req, res) => {
-    const persona = await Persona.findById(req.params.id).exec();
+    const persona = await Persona.findById(req.params.id).populate('usuario').exec();
     /* console.log(persona)*/
     res.json(persona);
 }
 
 personaCtrl.getPersonaDNI = async (req, res) => {
-    const persona = await Persona.find(req.params).exec();
+    const persona = await Persona.find(req.params).populate('usuario').exec();
     /* console.log(persona)*/
     res.json(persona);
 }
