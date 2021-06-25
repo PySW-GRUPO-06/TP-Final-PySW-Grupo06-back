@@ -8,6 +8,7 @@ const router = express.Router();
 
 //definimos las rutas para la gestion de agente
 router.get('/',autCtrl.verifyToken, alumnoCtrl.getAllAlumno);
+router.get('/persona/:persona',autCtrl.verifyToken, alumnoCtrl.getAlumnoPorPersona);
 router.post('/',autCtrl.verifyToken, alumnoCtrl.createAlumno);
 router.get('/:id',autCtrl.verifyToken, alumnoCtrl.getAlumno);
 router.put('/:id',autCtrl.verifyToken, alumnoCtrl.editAlumno);

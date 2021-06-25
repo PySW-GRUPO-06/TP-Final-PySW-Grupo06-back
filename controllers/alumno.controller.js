@@ -29,6 +29,11 @@ alumnoCtrl.getAlumno = async (req, res) => {
     res.json(alumno);
 }
 
+alumnoCtrl.getAlumnoPorPersona = async (req, res) => {
+    const alumno = await Alumno.find(req.params).populate('plan').populate('usuario').populate('asistencia').exec();
+    /* console.log(alumno)*/
+    res.json(alumno);
+}
 
 alumnoCtrl.editAlumno = async (req, res) => {
     const valumno = new Alumno(req.body);
