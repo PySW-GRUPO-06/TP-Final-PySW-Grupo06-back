@@ -5,8 +5,8 @@ const {Schema} = mongoose;
 
 const PlanSchema = new Schema({
  tipo: {type: String, required: true},
- fechaInicioPlan: {type: Date, required: true},
- fechaFinDelPlan: {type: Date, required: true},
+ fechaInicioPlan: {type: String, required: true},
+ fechaFinDelPlan: {type: String, required: true},
  nivel: {type: String, required: true},
  objetivo: {type: String, required: true},
  registroDieta: [{ type: Schema.ObjectId , ref: 'RegistroDieta'}],

@@ -7,7 +7,7 @@ const RegistroDietaSchema = new Schema({
  foto: {type: String, required: true},
  altura: {type: Number, required: true},
  peso: {type: Number, required: true},
- fecha: {type: Date, required: true},
+ fecha: {type: String, required: true},
  proteinas: {type: Number, required: true},
  calorias: {type: Number, required: true}
 });

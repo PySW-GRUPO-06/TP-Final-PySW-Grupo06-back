@@ -5,7 +5,7 @@ const {Schema} = mongoose;
 
 const AlumnoSchema = new Schema({
  persona: { type: Schema.ObjectId, ref: 'Persona' },
- fechaInicio: {type: Date, required: true},
+ fechaInicio: {type: String, required: true},
  registroPlan: [{ type: Schema.ObjectId, ref: 'Plan' }],
  planActivo: { type: Schema.ObjectId, ref: 'Plan' },
  asistencia: [{ type: Schema.ObjectId, ref: 'Asistencia' }]
