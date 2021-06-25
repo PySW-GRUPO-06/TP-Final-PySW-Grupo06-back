@@ -13,7 +13,8 @@ planCtrl.createPlan = async (req, res) => {
         await plan.save();
         res.json({
             'status': '1',
-            'msg': 'plan guardado.'
+            'msg': 'plan guardado.',
+            'id':plan._id
         })
     } catch (error) {
         res.json({
