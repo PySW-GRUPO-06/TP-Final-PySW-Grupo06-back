@@ -13,7 +13,8 @@ asistenciaCtrl.createAsistencia = async (req, res) => {
         await asistencia.save();
         res.json({
             'status': '1',
-            'msg': 'asistencia guardado.'
+            'msg': 'asistencia guardado.',
+            'id': asistencia._id
         })
     } catch (error) {
         res.json({
