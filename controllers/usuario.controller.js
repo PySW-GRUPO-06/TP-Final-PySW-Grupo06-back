@@ -28,13 +28,15 @@ usuarioCtrl.loginUsuario = async (req, res) => {
             })
         } else {
             const unToken = jwt.sign({ id: user._id }, "secretkey");
+            /* console.log(user.rol) */
             res.json({
                 status: 1,
                 message: "success",
                 username: user.username,
                 userid: user._id, 
                 perfinl: user.perfil,
-                token: unToken
+                token: unToken,
+                rol: user.rol
             });
         }
     })
