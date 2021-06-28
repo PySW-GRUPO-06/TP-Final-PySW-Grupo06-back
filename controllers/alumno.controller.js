@@ -13,7 +13,8 @@ alumnoCtrl.createAlumno = async (req, res) => {
         await alumno.save();
         res.json({
             'status': '1',
-            'msg': 'alumno guardado.'
+            'msg': 'alumno guardado.',
+            'id': alumno._id
         })
     } catch (error) {
         res.json({
