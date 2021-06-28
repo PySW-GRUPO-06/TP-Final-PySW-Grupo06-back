@@ -48,7 +48,8 @@ usuarioCtrl.createUsuario = async (req, res) => {
         await usuario.save();
         res.json({
             'status': '1',
-            'msg': 'usuario guardado.'
+            'msg': 'usuario guardado.',
+            'id': usuario._id
         })
     } catch (error) {
         res.json({

@@ -13,7 +13,8 @@ personaCtrl.createPersona = async (req, res) => {
         await persona.save();
         res.json({
             'status': '1',
-            'msg': 'persona guardado.'
+            'msg': 'persona guardado.',
+            'id': persona._id
         })
     } catch (error) {
         res.json({
