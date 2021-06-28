@@ -13,7 +13,8 @@ ejercicioCtrl.createEjercicio = async (req, res) => {
         await ejercicio.save();
         res.json({
             'status': '1',
-            'msg': 'ejercicio guardado.'
+            'msg': 'ejercicio guardado.',
+            'id': ejercicio._id
         })
     } catch (error) {
         res.json({

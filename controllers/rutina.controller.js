@@ -13,7 +13,8 @@ rutinaCtrl.createRutina = async (req, res) => {
         await rutina.save();
         res.json({
             'status': '1',
-            'msg': 'rutina guardado.'
+            'msg': 'rutina guardado.',
+            'id': rutina._id
         })
     } catch (error) {
         res.json({
@@ -24,7 +25,7 @@ rutinaCtrl.createRutina = async (req, res) => {
 }
 
 rutinaCtrl.getRutina = async (req, res) => {
-    const rutina = await Rutina.findById(req.params.id).exec();
+    const rutina = await Rutina.findById(req.params.id).populate('dias').exec();
     /* console.log(rutina)*/
     res.json(rutina);
 }

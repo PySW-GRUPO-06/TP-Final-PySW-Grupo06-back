@@ -13,7 +13,8 @@ diaCtrl.createDia = async (req, res) => {
         await dia.save();
         res.json({
             'status': '1',
-            'msg': 'dia guardado.'
+            'msg': 'dia guardado.',
+            'id': dia._id
         })
     } catch (error) {
         res.json({
@@ -24,7 +25,7 @@ diaCtrl.createDia = async (req, res) => {
 }
 
 diaCtrl.getDia = async (req, res) => {
-    const dia = await Dia.findById(req.params.id).exec();
+    const dia = await Dia.findById(req.params.id).populate('ejercicios').exec();
     /* console.log(rutina)*/
     res.json(dia);
 }
