@@ -30,6 +30,12 @@ personaCtrl.getPersona = async (req, res) => {
     res.json(persona);
 }
 
+personaCtrl.getPersonaUsuario = async (req, res) => {
+    const persona = await Persona.find(req.params).populate('usuario').exec();
+    /* console.log(persona)*/
+    res.json(persona);
+}
+
 personaCtrl.getPersonaDNI = async (req, res) => {
     const persona = await Persona.find(req.params).populate('usuario').exec();
     /* console.log(persona)*/
