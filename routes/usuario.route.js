@@ -8,7 +8,7 @@ const router = express.Router();
 
 //definimos las rutas para la gestion de agente
 router.get('/',autCtrl.verifyToken, usuarioCtrl.getAllUsuario);
-router.post('/',autCtrl.verifyToken, usuarioCtrl.createUsuario);
+router.post('/', usuarioCtrl.createUsuario);
 
 router.get('/:id',autCtrl.verifyToken, usuarioCtrl.getUsuario);
 router.put('/:id',autCtrl.verifyToken, usuarioCtrl.editUsuario);
