@@ -36,7 +36,8 @@ usuarioCtrl.loginUsuario = async (req, res) => {
                 userid: user._id, 
                 perfinl: user.perfil,
                 token: unToken,
-                rol: user.rol
+                rol: user.rol,
+                activo: user.activo
             });
         }
     })
